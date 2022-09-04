@@ -1,0 +1,156 @@
+/* Inicializar formatações gerais da pagina*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	
+	outline: none;
+	font-family: 'Arial', sans-serif;
+}
+
+/* Criando variaveis de cores*/
+
+:root{
+	--orange: #F78B00;		
+}
+
+/* Configurações gerais para html e body*/
+html, body {
+/* Tamanho da pagina*/
+	width: 100%;
+	/*bloqueando barra de rolagem*/
+	overflow-x: hidden;
+}
+
+/* configurações do header */
+header{
+	width: 100%;
+	height: 500px;
+	background-color: beige;
+}
+
+/* configurações visuais para o conteudo */
+.conteudo{
+	max-width: 1000px;
+	min-width: 300px;
+	/*alinhar conteudo ao centro*/
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+
+/* estilizando da barra de navegação*/
+nav{
+	width: 100%;
+	height: 125px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+
+/* vamos tratar a class brand- nome da empresa */
+.brand{
+	font-size: 24px;
+	color: blue;
+	cursor: pointer; /*aparecer a mãozinha para clicar */
+}
+
+/* formatar itens da barra de navegação*/
+nav ul{
+	display: flex;
+	/*colocando os itens na horizontal*/
+	flex-direction: row;
+}
+
+/* formatar itens da lista não numerada da barra de navegação*/
+nav ul li {
+	/*removendo formatação padrão de lista*/
+	list-style: none;
+	padding: 10px;
+	cursor: pointer;
+}
+
+/*remover o estilo de link da lista*/
+nav ul li a{
+	text-decoration: none;
+	color: blue;
+}
+
+/* mudar a cor quando passar mouse sobre o item da barra de navegação*/
+nav ul li a:hover{
+	color: red;
+}
+
+/* alterar as configurações do botão da barra de navegação*/
+nav ul button{
+	border: 1px solid blue;
+	background: transprarent;
+	/*tamanho do botão*/
+	padding: 8px 40px;	
+	cursor: pointer;
+	margin-left: 30px;
+	color: blue;
+	font-weight: bold;
+	/*deixar botão com campos arredondados*/
+	border-radius: 100px;
+}
+
+/*alterando estilo do botão quando passa o mouse sobre ele*/
+nav ul button:hover{
+	color: pink;
+	background-color: black; 
+	/*tempo de transição para formatação do botão*/
+	transition: background, color 0.1s;
+}
+
+.buscatexto{
+	border: 1px solid #000000;
+    background: #ffffff;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;	
+}
+.buscacheckin{
+	border: 1px solid #000000;
+    background: #ffffff;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;		
+}
+.buscacheckout{
+	border: 1px solid #000000;
+    background: #ffffff;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;	
+}
+.buscaqtdhospedes{
+	border: 1px solid #000000;
+    background: #ffffff;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;	
+}

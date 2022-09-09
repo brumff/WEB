@@ -1,0 +1,83 @@
+<!DOCTYPR html>
+
+    <html>
+    <!-- Este é um comentario no html fora do body -->
+
+    <head>
+        <title> Cadastro Dono do Pet </title>
+        <meta charset="utf-8" />
+        <!-- habilitando arquivo CSS -->
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+
+    <body>
+        <header>
+            <!--Agrupar os dados-->
+            <div class="box">
+                <!--Criando formulário sem ação-->
+                <form action="">
+                    <!--Legenda do formulario-->
+                    <fieldset>
+                        <!--b para deixar texto em negrito-->
+                        <legend> <b>Cadastro do Dono de Pet </b> </legend>
+                        <br>
+                        <!--Criar uma div para cada input-->
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="nomedonopet" id="nomedonopet" class="inputdonodopet" placeholder="Digite seu nome!" required>
+                            <label for="nomedonopet">Nome Completo </label>
+                        </div>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="cpfdonopet" id="cpfdonopet" class="inputdonodopett" placeholder="Digite seu CPF!"required>
+                            <label for="cpfdonopet">CPF</label>
+                        </div>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="telefonedonopet" id="telefonedonopet" class="inputdonodopet" placeholder="Digite seu telefone!"
+                                required>
+                            <label for="cpfdonopet">CPF</label>
+                        </div>
+                        <p>Sexo</p>
+                        <input type="radio" id="feminino" name="genero" value="feminino" required>
+                        <label for="feminino">Feminino</label>
+                        <input type="radio" id="masculino" name="genero" value="masculino" required>
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" id="outro" name="genero" value="outro" required>
+                        <label for="outro">Outro</label>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <label for="dtnascnedonopet">Data de Nascimento</label>
+                            <input type="date" name="dtnascnedonopet" id="dtnascnedonopet" class="inputdonodopet" 
+                                required>
+                        </div>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="emaildonopet" id="emaildonopet" class="inputdonodopet" placeholder="Digite seu e-mail!" required>
+                            <label for="emaildonopet">E-mail</label>
+                        </div>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="password" name="senhadonopet" id="senhadonopet" class="inputdonodopet" placeholder="Digite sua senha!"
+                                required>
+                            <label for="senhadonopet">Senha</label>
+                        </div>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="password" name="confirmacaosenhadonopet" id="confirmacaosenhadonopet"
+                                class="inputdonodopet" placeholder="Digite a senha novamente!"required>
+                            <label for="confirmacaosenhadonopet">Digite a senha novamente</label>
+                        </div>
+                        <div class="inputboxbotao">
+                            <!--Required é campo obrigatorio-->
+                            <button type="button" name="botaocadastrardonopet" id="botaocadastrardonopet"
+                                class="inputdonodopet" required>Cadastrar </button>
+                            <label for="botaocadastrardonopet"></label>
+                        </div>
+            </div>
+            </fieldset>
+            </form>
+            </div>
+    </body>
+
+    </html>

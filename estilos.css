@@ -154,3 +154,108 @@ nav ul button:hover{
     -moz-box-shadow: 1px 1px 2px #333333;
     -webkit-box-shadow: 1px 1px 2px #333333;	
 }
+
+section{
+	margin-left: auto;
+    margin-right: auto;
+}
+.telalogin{
+	margin-left: auto;
+    margin-right: auto;	
+}
+.usuario{
+	border: 1px solid #000000;
+    background: #ffffff;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;	
+	text-indent: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.senha{
+	border: 1px solid #000000;
+    background: #ffffff;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;	
+	text-indent: 10px;
+	display: flex;
+	flex-direction: column;
+}
+.botaologin{
+	border: 1px solid #000000;
+    background: #ffffff;
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;	
+}
+.botaologin:hover{
+    background: #991e1e;
+}
+.conteudo .header-block {
+    max-width: 1000px;
+    min-width: 300px;
+    height: 250px;
+    background: rgb(117, 135, 141);
+    border-radius: 8px;
+    /* tratando as sombras*/
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    
+	/*posição relativa*/
+	position: relative;
+	z-index: 10;
+	padding: 10px;
+}
+.header-block img{
+	width: 20%;
+	position: absolute;
+	right: 75%;
+	bottom: 2%;
+}
+.header-block .text h2{
+	margin-bottom: 20px;
+	text-align: right;
+}
+.header-block .text p{
+	margin-bottom: 20px;
+	text-align: right;
+}
+.conteudo .header-block-sobrenos {
+    max-width: 1000px;
+    min-width: 300px;
+    height: 250px;
+    background: rgb(117, 135, 141);
+    border-radius: 8px;
+    /* tratando as sombras*/
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    
+	/*posição relativa*/
+	position: relative;
+	z-index: 10;
+	padding: 10px;
+}
+.box{
+	/*ocupar somente o espaço proporcional*/
+	position: absolute;
+	/*para centralizar*/
+	top:20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+

@@ -254,8 +254,7 @@ section{
 	/*ocupar somente o espaço proporcional*/
 	position: absolute;
 	/*para centralizar*/
-	top:20%;
+	top:50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-

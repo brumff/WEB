@@ -1,0 +1,103 @@
+<!DOCTYPR html>
+
+    <html>
+    <!-- Este é um comentario no html fora do body -->
+
+    <head>
+        <title> Cadastro do Parceiro </title>
+        <meta charset="utf-8" />
+        <!-- habilitando arquivo CSS -->
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+
+    <body>
+        <header>
+            <!--Agrupar os dados-->
+            <div class="box">
+                <!--Criando formulário sem ação-->
+                <form action="">
+                        <!--b para deixar texto em negrito-->
+                        <legend> <b>Cadastro do Parceiro</b> </legend>
+                        <br>
+                        <!--Criar uma div para cada input-->
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="nomeparceiro" id="nomeparceiro" class="inputnomeparceiro" placeholder="Digite o nome!" required>
+                            <label for="nomeparceiro">Nome</label> 
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="cnpjparceiro" id="cnpjparceiro" class="inputcnpjparceiro" placeholder="Digite o CNPJ!" required>
+                            <label for="cnpjparceiro">CNPJ</label> 
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="telefoneparceiro" id="telefoneparceiro" class="inputtelefoneparceiro" placeholder="Digite o telefone!" required>
+                            <label for="telefoneparceiro">Telefone</label> 
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="emailparceiro" id="emailparceiro" class="inputemailparceiro" placeholder="Digite o e-mail!" required>
+                            <label for="emailparceiro">E-mail</label> 
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Aqui pode ser um seletor-->
+                            <select type="select" name="servicosparceiro" id="servicosparceiro" class="inputservicosparceiro" placeholder="Selecione os serviços!" required>
+                            <option value="valor1">Valor 1</option>
+                            <option value="valor2">Valor 2</option>
+                            <option value="valor3">Valor 3</option>
+                            </select>
+                            <label for="servicosparceiro">Serviços</label> 
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Aqui tem ter seg, qua, qui, sex, sab, dom-->
+                            <label for="dtfuncionamento">Data de Funcionamento</label>
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Aqui tem ter seg, qua, qui, sex, sab, dom-->
+                            <input type="time" name="horaabertura" id="horaabertura" class="inputhoraabertura" required>
+                            <label for="horaabertura">Horario de Abertura</label>
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Aqui tem ter seg, qua, qui, sex, sab, dom-->
+                            <input type="time" name="horafechamento" id="horafechamento" class="inputhorafechamento" required>
+                            <label for="horafechamento">Horario de Fechamento</label>
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="nomeproprietario" id="nomeproprietario" class="inputnomeproprietario" placeholder="Digite o nome do proprietario!" required>
+                            <label for="nomeproprietario">Nome Proprietario</label> 
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="text" name="cpfproprietario" id="cpfproprietario" class="inputcpfproprietario" placeholder="Digite CPF do proprietario!" required>
+                            <label for="cpfproprietario">CPF do Proprietario</label> 
+                        </div> <br>
+                        <p>Situação</p>
+                        <input type="radio" id="ativo" name="situacao" value="ativo" required>
+                        <label for="ativo">Ativo</label>
+                        <input type="radio" id="inativo" name="situacao" value="inativo" required>
+                        <label for="inativo">Inativo</label> <br>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="password" name="senhaparceiro" id="senhaparceiro" class="inputsenhaparceiro" placeholder="Digite senha!" required>
+                            <label for="senhaparceiro">Senha</label> 
+                        </div> <br>
+                        <div class="inputbox">
+                            <!--Required é campo obrigatorio-->
+                            <input type="password" name="confirmacaosenhaparceiro" id="confirmacaosenhaparceiro" class="inputconfirmacaosenhaparceiro" placeholder="Digite senha novamente!" required>
+                            <label for="confirmacaosenhaparceiro">Digite a senha novamente</label> 
+                        </div> <br>
+                        <div class="inputboxbotao">
+                            <!--Required é campo obrigatorio-->
+                            <button type="button" name="cadastrarproprietario" id="cadastrarproprietario"
+                                class="inputcadastrarproprietario" required>Cadastrar </button>
+                            <label for="cadastrarproprietario"></label>
+                        </div>
+            </div>
+            </fieldset>
+            </form>
+            </div>
+    </body>
+
+    </html>

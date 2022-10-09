@@ -93,151 +93,84 @@
   
       </div>
     </header>
-<div class="container">
-  <main>
+    
     <div class="py-5 text-center">
       <h2>Cadastro do Dono Pet</h2>
-      <!--<p class="lead">Acho que não precisa de texto aqui</p>-->
-    </div>
-      <div class="col-md-7 col-lg-8">
-        <form class="needs-validation" novalidate>
-          <div class="row g-3  col-md-8 offset-md-5">
-            <div class="col-12">
-              <h4 class="mb-3">Informações do dono do Pet</h4>
-              <label for="nomeDoDonoPet" class="form-label">Nome Completo</label>
-              <input type="text" class="form-control" id="nomeDoDonoPet" placeholder="Digite o seu nome" value="" required>
-              <!--Acho que não precisa<div class="invalid-feedback">
-                Valid first name is required.
-              </div> -->
-            </div>
 
-          <!--  <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid last name is required.
+    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#JanelaModal" type="submit">
+      Cadastrar
+  </button>
+</div>
+<div class="container">
+
+  <main>
+<!--Inicio da modal-->
+    <div id = "JanelaModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                  <h3 class="modal-title">Cadastro dono do PET</h3>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
               </div>
-            </div>-->
+              <div class="modal-body">
+                      <form class="needs-validation" novalidate>
+                          <div class="form-group">
+                            <label for="nomeDoDonoPet" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeDoDonoPet" placeholder="Digite o seu nome" value="" required>
+                          </div>
 
-            <div class="col-12">
-              <label for="cpfDoDono" class="form-label">CPF</label>
-              <div class="input-group has-validation">
-                <!-- <span class="input-group-text">@</span> -->
-                <input type="text" class="form-control" id="cpfDoDono" placeholder="Digite seu CPF" required>
-              <!--<div class="invalid-feedback">
-                  Your username is required.
-                </div>-->
-              </div>
-            </div>
+                            <div class="form-group">
+                              <label for="cpfDoDono" class="form-label">CPF</label>
+                              <input type="text" class="form-control" id="cpfDoDono" placeholder="Digite seu CPF" required>
+                              </div>
+                            
+                            <div class="form-group">
+                              <label for="telefoneDoDono" class="form-label">Telefone</label>
+                              <input type="text" class="form-control" id="telefoneDoDono" placeholder="Digite seu telefone">
+                            </div>
 
-            <div class="col-12">
-              <label for="telefoneDoDono" class="form-label">Telefone</label>
-              <input type="text" class="form-control" id="telefoneDoDono" placeholder="Digite seu telefone">
-              <!--<div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>-->
-            </div>
+                            <div class="form-group">
+                              <label for="dtNascDonoPet" class="form-label">Data de Nascimento</label>
+                              <input type="date" class="form-control" id="dtNascDonoPet" placeholder="Digite sua data de nascimento" required>
+                            </div>
 
-            <div class="col-12">
-              <label for="dtNascDonoPet" class="form-label">Data de Nascimento</label>
-              <input type="date" class="form-control" id="dtNascDonoPet" placeholder="Digite sua data de nascimento" required>
-             <!-- <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>-->
-            </div>
+                            <div class="form-group">
+                              <h4 class="mb-1">Genero</h4>
+                              <div class="form-check">
+                                <input id="feminino" name="genero" type="radio" class="form-check-input" checked required>
+                                <label class="form-check-label" for="feminino">Feminino</label>
+                              </div>
+                              <div class="form-check">
+                                <input id="masculino" name="genero" type="radio" class="form-check-input" required>
+                                <label class="form-check-label" for="masculino">Masculino</label>
+                              </div>
+                              <div class="form-check">
+                                  <input id="masculino" name="outro" type="radio" class="form-check-input" required>
+                                  <label class="form-check-label" for="outro">Outro</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                              <h4 class="mb-3">Informações para acesso</h4>
+                              <label for="emailDonoDoPet" class="form-label">E-mail</label>
+                              <input type="email" class="form-control" id="emailDonoDoPet" placeholder="Digite seu e-mail" required>
+                              <label for="confirmacaoSenhaDonoDoPet" class="form-label">Confirmação da senha</label>
+                              <input type="password" class="form-control" id="confirmacaoSenhaDonoDoPet" placeholder="Digite novamente a senha" required>
+                            </div>    
 
-            <h4 class="mb-1">Genero</h4>
-
-            <div class="my-2">
-              <div class="form-check">
-                <input id="feminino" name="genero" type="radio" class="form-check-input" checked required>
-                <label class="form-check-label" for="feminino">Feminino</label>
-              </div>
-              <div class="form-check">
-                <input id="masculino" name="genero" type="radio" class="form-check-input" required>
-                <label class="form-check-label" for="masculino">Masculino</label>
-              </div>
-              <div class="form-check">
-                  <input id="masculino" name="outro" type="radio" class="form-check-input" required>
-                  <label class="form-check-label" for="outro">Outro</label>
-                </div>
-            </div>
-
-            <div class="col-12">
-              <h4 class="mb-3">Informações para acesso</h4>
-                <label for="emailDonoDoPet" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="emailDonoDoPet" placeholder="Digite seu e-mail" required>
-               <!-- <div class="invalid-feedback">
-                  Please enter your shipping address.
-                </div>-->
-              </div>
-
-              <div class="col-12">
-                <label for="senhaDonoDoPet" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="senhaDonoDoPet" placeholder="Digite uma senha" required>
-               <!-- <div class="invalid-feedback">
-                  Please enter your shipping address.
-                </div>-->
-              </div>
-
-              <div class="col-12">
-                <label for="confirmacaoSenhaDonoDoPet" class="form-label">Confirmação da senha</label>
-                <input type="password" class="form-control" id="confirmacaoSenhaDonoDoPet" placeholder="Digite novamente a senha" required>
-               <!-- <div class="invalid-feedback">
-                  Please enter your shipping address.
-                </div>-->
-              </div>
-
-          <!--  <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div>
-          </div>-->
-
-          <!--<hr class="my-4">
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                      <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </div>
+                    <div class="modal-footer">
+                      
+                    </div>
           </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Save this information for next time</label>
-          </div>
-
-          <hr class="my-4">-->
-
-
-
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Cadastrar</button>
-        </form>
       </div>
+  </div>
+     
     </div>
   </main>
 </div>

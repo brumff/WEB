@@ -96,15 +96,53 @@
   </div>
 </header>
 
-
-  <div class="py-5 text-center">
-    
+<div class="container">
+  <div class="row">
+    <div class="col-8">
       <h2>Cadastro do Pet</h2>
-      <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#JanelaModal" type="submit">
-        Cadastrar
-    </button>
+    </div> 
+    <div class="col-4">
+    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#JanelaModal" type="submit">
+      Cadastrar
+  </button>
+    </div>
+    <div class="row g-3">
+      <div class="col-sm">
+      <input type="search" class="form-control" id="pesquisaPet" placeholder="Pesquisa" required>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary btn">Pesquisar</button>
+    </div>
+    </div>
+</div> <br>
 
-  </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome do Pet</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Mel</th>
+      <td>2</td>
+      <td>Femêa</td>
+      <!--Colocar imagens com ações-->
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">Turquesa</th>
+      <td>12</td>
+      <td>Femêa</td>
+      <!--Colocar imagens com ações-->
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
     <main>
     <div id = "JanelaModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">

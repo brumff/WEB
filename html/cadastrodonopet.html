@@ -6,10 +6,6 @@
     <meta name="description" content="">
     <title>Cadastro do Dono Pet</title>
 
-
-    
-    
-
 <link href="../bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -70,18 +66,43 @@
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-    
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap" />
+            </svg>
+          </a>
+  
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="../html/paginainicial.html" class="nav-link px-2  link-dark">Home</a></li>
+            <li><a href="../html/sobrenos.html" class="nav-link px-2 link-dark">Sobre Nós</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Parceiros</a></li>
+          </ul>
+  
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Login
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Parceiro</a></li>
+              <li><a class="dropdown-item" href="#">Dono Pet</a></li>
+            </ul>
+          </div>
+  
+      </div>
+    </header>
 <div class="container">
   <main>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
       <h2>Cadastro do Dono Pet</h2>
-      <p class="lead">Acho que não precisa de texto aqui</p>
+      <!--<p class="lead">Acho que não precisa de texto aqui</p>-->
     </div>
       <div class="col-md-7 col-lg-8">
         <form class="needs-validation" novalidate>
           <div class="row g-3  col-md-8 offset-md-5">
-            <div class="col-12 ">
+            <div class="col-12">
               <h4 class="mb-3">Informações do dono do Pet</h4>
               <label for="nomeDoDonoPet" class="form-label">Nome Completo</label>
               <input type="text" class="form-control" id="nomeDoDonoPet" placeholder="Digite o seu nome" value="" required>

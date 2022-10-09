@@ -11,7 +11,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="../bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
-
+</head>
 <body>
   <header class="p-3 mb-3 border-bottom">
     <div class="container">
@@ -23,25 +23,26 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark">Sobre Nós</a></li>
+          <li><a href="../html/paginainicial.html" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="../html/sobrenos.html" class="nav-link px-2 link-dark">Sobre Nós</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">Parceiros</a></li>
         </ul>
 
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Login
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Dono do Pet</a></li>
             <li><a class="dropdown-item" href="#">Parceiro</a></li>
+            <li><a class="dropdown-item" href="#">Dono Pet</a></li>
           </ul>
         </div>
-      </div>
+
     </div>
   </header>
 
-  <div class="row align-items-center">
+  <div class="container align-self-center d-flex justify-content-center">
+  <div class="row justify-content-center align-items-center vw-100"> 
     <div class="col-md-4 col-xs-4">
   <label for="exampleFormControlInput1" class="form-label">Endereço</label>
   <input type="text" class="form-control" id="endereco" placeholder="Digite o endereço">
@@ -54,10 +55,10 @@
   <label for="exampleFormControlInput1" class="form-label">Data Check Out</label>
   <input type="date" class="form-control" id="dataCheckOut" placeholder="Digite o endereço">
 </div>
-<div class="col align-self-end"> 
-<button class="btn btn-primary" type="submit">Confirmar reserva</button>
+<div class="col-md-auto align-self-end"> 
+<button class="btn btn-primary" type="submit">Pesquisar</button> 
 </div>
 </div>
-
+</div>
 </body>
 </html>

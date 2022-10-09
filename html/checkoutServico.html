@@ -7,8 +7,6 @@
   <meta name="description" content="">
   <title>Checkout Serviço</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
-
   <link href="../bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
@@ -70,13 +68,38 @@
 </head>
 
 <body class="bg-light">
+  <header class="p-3 mb-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+            <use xlink:href="#bootstrap" />
+          </svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="../html/paginainicial.html" class="nav-link px-2  link-dark">Home</a></li>
+          <li><a href="../html/sobrenos.html" class="nav-link px-2 link-dark">Sobre Nós</a></li>
+          <li><a href="#" class="nav-link px-2 link-dark">Parceiros</a></li>
+        </ul>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Parceiro</a></li>
+            <li><a class="dropdown-item" href="#">Dono Pet</a></li>
+          </ul>
+        </div>
+
+    </div>
+  </header>
 
   <div class="container">
     <main>
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h2>Pagamento</h2>
-        <p class="lead">Acho que não precisa</p>
       </div>
 
       <div class="row g-5">
@@ -150,8 +173,8 @@
           <h4 class="mb-3">Pagamento</h4>
           <form class="needs-validation" novalidate>
             <div class="row g-3">
-              <h6>Meu perfil</h6>
-              <div class="col-sm-6">
+              <h5>Meu perfil</h5>
+              <div class="col-12">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="nome" placeholder="" value="" required>
                 <div class="invalid-feedback">
@@ -159,7 +182,7 @@
                 </div>
               </div>
 
-              <div class="col-12">
+              <div class="col-lg-auto">
                 <label for="cpf" class="form-label">CPF</label>
                 <div class="input-group has-validation">
                   <input type="text" class="form-control" id="cpf" placeholder="XXX.XXX.XXX.-XX" required>
@@ -169,15 +192,15 @@
                 </div>
               </div>
 
-              <div class="col-12">
-                <label for="telfone" class="form-label">Telefone <span class="text-muted"></span></label>
-                <input type="tel" class="form-control" id="telfone" placeholder="" required>
+              <div class="col-lg-auto">
+                <label for="telefone" class="form-label">Telefone <span class="text-muted"></span></label>
+                <input type="tel" class="form-control" id="telfone" placeholder="(99) 99999-9999" required>
                 <div class="invalid-feedback">
                   Telefone é obrigatório!
                 </div>
               </div>
 
-              <h6>Endereço</h6>
+              <h5>Endereço</h5>
               <div class="col-12">
                 <label for="endereco" class="form-label">Endereço</label>
                 <input type="text" class="form-control" id="endereco" placeholder="" required>
@@ -219,7 +242,7 @@
 
             <hr class="my-4">
 
-            <h6>Pets</h6>
+            <h5>Pets</h5>
             <div class="col-12">
               <label for="selecionarPet" class="form-label"></label>
               <select class="form-select" id="selecionarPet" required>

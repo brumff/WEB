@@ -293,3 +293,6 @@ body {
   .container {
 	max-width: 960px;
   }
+.btn btn-primary{
+	color: #F66B0E;
+}

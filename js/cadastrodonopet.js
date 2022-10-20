@@ -1,11 +1,10 @@
-var nomePet = document.getElementById("nomePet").value;
-
+/*atualiza campo*/
 document.getElementById("nomePet").addEventListener("keypress",()=>validarNome());
 document.getElementById("idadePet").addEventListener("keypress",()=>validarIdade());
 document.getElementById("pesoPet").addEventListener("keypress",()=>validarPeso());
 document.getElementById("racaPet").addEventListener("keypress",()=>validarRaca());
 document.getElementById("corPet").addEventListener("keypress",()=>validarCor());
-
+/*realiza validação ao clicar no botão enviar*/
 function validar(){
     validarNome();
     validarIdade();
@@ -14,10 +13,10 @@ function validar(){
     validarCor();
 }
 function validarNome(){
-    if(document.getElementById("nomePet").value == ""){
-        document.getElementById("nomePet").className = "form-control  is-invalid";
+    if(document.getElementById("nomeDoDonoPet").value == ""){
+        document.getElementById("nomeDoDonoPet").className = "form-control  is-invalid";
     }else{
-        document.getElementById("nomePet").className = "form-control  is-valid";
+        document.getElementById("nomeDoDonoPet").className = "form-control  is-valid";
     }
 }
 function validarIdade(){

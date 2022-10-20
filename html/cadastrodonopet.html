@@ -116,25 +116,33 @@
               <div class="modal-body">
                       <form class="needs-validation" novalidate>
                           <div class="form-group">
-                            <label for="nomeDoDonoPet" class="form-label">Nome Completo</label>
-                            <input type="text" class="form-control" id="nomeDoDonoPet" placeholder="Digite o seu nome" value="" required>
+                            <label for="nomeDonoPet" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nomeDonoPet" placeholder="Digite o seu nome" value="" required>
+                            <div class="invalid-feedback">
+                              Por favor, informe o nome.
+                            </div>                         
                           </div>
-
                             <div class="form-group">
-                              <label for="cpfDoDono" class="form-label">CPF</label>
-                              <input type="text" class="form-control" id="cpfDoDono" placeholder="Digite seu CPF" required>
-                              </div>
-                            
-                            <div class="form-group">
-                              <label for="telefoneDoDono" class="form-label">Telefone</label>
-                              <input type="text" class="form-control" id="telefoneDoDono" placeholder="Digite seu telefone">
+                              <label for="cpfDono" class="form-label">CPF</label>
+                              <input type="text" class="form-control" id="cpfDono" maxlength="14" onkeyup="mascara_cpf()" placeholder="Digite seu CPF" required>
+                              <div id="erro-cpf" class="invalid-feedback">
+                                Por favor, informe o CPF.
+                              </div>  
                             </div>
-
+                            <div class="form-group">
+                              <label for="telefoneDono" class="form-label">Telefone</label>
+                              <input type="text" class="form-control" id="telefoneDono" placeholder="Digite seu telefone">
+                              <div class="invalid-feedback">
+                                Por favor, informe o telefone.
+                              </div> 
+                            </div>
                             <div class="form-group">
                               <label for="dtNascDonoPet" class="form-label">Data de Nascimento</label>
                               <input type="date" class="form-control" id="dtNascDonoPet" placeholder="Digite sua data de nascimento" required>
+                              <div class="invalid-feedback">
+                                Por favor, informe a data de nascimento.
+                              </div> 
                             </div>
-
                             <div class="form-group">
                               <h4 class="mb-1">Genero</h4>
                               <div class="form-check">
@@ -154,15 +162,26 @@
                               <h4 class="mb-3">Informações para acesso</h4>
                               <label for="emailDonoDoPet" class="form-label">E-mail</label>
                               <input type="email" class="form-control" id="emailDonoDoPet" placeholder="Digite seu e-mail" required>
-                              <label for="confirmacaoSenhaDonoDoPet" class="form-label">Confirmação da senha</label>
-                              <input type="password" class="form-control" id="confirmacaoSenhaDonoDoPet" placeholder="Digite novamente a senha" required>
+                              <div class="invalid-feedback">
+                                Por favor, informe o e-mail.
+                              </div> 
+                              <label for="senhaDonoDoPet" class="form-label">Confirmação da senha</label>
+                              <input type="password" class="form-control" id="senhaDonoDoPet" placeholder="Digite a senha" required>
+                              <div class="invalid-feedback">
+                                Por favor, informe a senha.
+                              </div>
+                              <label for="confSenhaDonoDoPet" class="form-label">Confirmação da senha</label>
+                              <input type="password" class="form-control" id="confSenhaDonoDoPet" placeholder="Digite novamente a senha" required>
+                              <div class="invalid-feedback">
+                                Por favor, informe a senha novamente.
+                              </div>
                             </div>    
 
                       </form>
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                      <button type="submit" class="btn btn-primary">Cadastrar</button>
+                      <button type="submit" class="btn btn-primary" onclick="validar()">Cadastrar</button>
                     </div>
                     <div class="modal-footer">
                       

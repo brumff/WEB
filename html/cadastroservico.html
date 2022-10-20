@@ -120,6 +120,9 @@
                                   <label for="nomeServico" class="form-label">Nome do serviço</label>
                                   <input type="text" class="form-control" id="nomeServico"
                                       placeholder="Digite o nome do serviço" value="" required>
+                                      <div class="invalid-feedback">
+                                        Por favor, informe o nome.
+                                      </div>
                                   </div>
                                   <div class="form-group">
                                     <p>Tipo do serviços</p>
@@ -143,11 +146,17 @@
                                   <div class="form-group">
                                     <label for="descricaoServico">Descrição do Serviço</label>
                                     <textarea class="form-control" id="descricaoServico" rows="3"></textarea>
+                                    <div class="invalid-feedback">
+                                      Por favor, informe a descrição do serviço.
+                                    </div>
                                   </div>
                                   <div class="form-group">
                                     <label for="precoServico" class="form-label">Preço do serviço</label>
                                     <input type="text" class="form-control" id="precoServico"
                                         placeholder="Digite o preço do serviço" required>
+                                        <div class="invalid-feedback">
+                                          Por favor, informe o preço.
+                                        </div>
                                   </div>
                                   <div class="form-group">
                                     <div class="custom-file">
@@ -208,7 +217,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Enviar</button>
+                            <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
                           </div>
                 </div>
             </div>
@@ -220,6 +229,8 @@
     <script src="../bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="../js/form-validation.js"></script>
+
+    <script src="../js/cadastroservico.js"></script>
 </body>
 
 </html>

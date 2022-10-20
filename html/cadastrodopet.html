@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <script src="../js/cadastrodopet.js" defer></script>
   <title>Cadastro do Pet</title>
 
   <link href="../bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -97,12 +96,12 @@
 </header>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8">
+  <div class="row  g-3">
+    <div class="col-sm">
       <h2>Cadastro do Pet</h2>
     </div> 
-    <div class="col-4">
-    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#JanelaModal" type="submit">
+    <div class="col-auto">
+    <button class="btn btn-primary btn" id="btn-cadastro" data-bs-toggle="modal" data-bs-target="#JanelaModal" type="submit">
       Cadastrar
   </button>
     </div>
@@ -111,7 +110,7 @@
       <input type="search" class="form-control" id="pesquisaPet" placeholder="Pesquisa" required>
     </div>
     <div class="col-auto">
-      <button class="btn btn-primary btn">Pesquisar</button>
+      <button class="btn btn-primary">Pesquisar</button>
     </div>
     </div>
 </div> <br>
@@ -159,26 +158,41 @@
                               <h4 class="mb-3">Informações do Pet</h4>
                               <label for="nomePet" class="form-label">Nome do Pet</label>
                               <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" required>
+                              <div class="invalid-feedback">
+                                Por favor, informe o nome.
                               </div>
+                            </div>
                               <div class="form-group">
                                 <label for="idadePet" class="form-label">Idade do Pet</label>
                                  <input type="number" class="form-control" id="idadePet" placeholder="Digite a idade do pet" required>
+                                 <div  id="erro-idade"  class="invalid-feedback">
+                                  Por favor, informe a idade.<i class="fas fa-id-badge    "></i>.
+                                </div>
+                                </div>
+                              <div class="form-group">
+                                <label for="dtNascPet" class="form-label">Data de Nascimento </label>
+                                <input type="date" class="form-control" id="dtNascPet" placeholder="">
                               </div>
                               <div class="form-group">
-                                <label for="dtnascpet" class="form-label">Data de Nascimento </label>
-                                <input type="date" class="form-control" id="dtnascpet" placeholder="">
+                                <label for="pesoPet" class="form-label">Peso do Pet</label>
+                                <input type="number" class="form-control" id="pesoPet" placeholder="Digite o peso de pet" required>
+                                <div class="invalid-feedback">
+                                  Por favor, informe o peso.
+                                </div>
                               </div>
                               <div class="form-group">
-                                <label for="pesopet" class="form-label">Peso do Pet</label>
-                                <input type="number" class="form-control" id="pesopet" placeholder="Digite o peso de pet" required>
+                                <label for="racaPet" class="form-label">Raça do Pet</label>
+                                <input type="text" class="form-control" id="racaPet" placeholder="Digite a raça do Pet" required>
+                                <div class="invalid-feedback">
+                                  Por favor, informe a raça.
+                                </div>
                               </div>
                               <div class="form-group">
-                                <label for="racaDoPet" class="form-label">Raça do Pet</label>
-                                <input type="text" class="form-control" id="racaDoPet" placeholder="Digite a raça do Pet" required>
-                              </div>
-                              <div class="form-group">
-                                <label for="corDoPet" class="form-label">Cor do Pet</label>
-                                <input type="text" class="form-control" id="corDoPet" placeholder="Cor do Pet" required>
+                                <label for="corPet" class="form-label">Cor do Pet</label>
+                                <input type="text" class="form-control" id="corPet" placeholder="Cor do Pet" required>
+                                <div class="invalid-feedback">
+                                  Por favor, informe o cor.
+                                </div>
                               </div>
                               <div class="form-group">
                                 <h4 class="mb-1">Genero</h4>
@@ -199,7 +213,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary">Enviar</button>
+                        <button type="button" class="btn btn-primary" onclick="validar()">Enviar</button>
                       </div>
             </div>
         </div>
@@ -215,6 +229,8 @@
   <script src="../bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="../js/form-validation.js"></script>
+
+  <script src="../js/cadastrodopet.js"></script>
 </body>
 
 </html>

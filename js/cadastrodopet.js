@@ -17,7 +17,7 @@ function validarNome(){
     if(document.getElementById("nomePet").value == ""){
         document.getElementById("nomePet").className = "form-control  is-invalid";
     }else{
-        document.getElementById("nomePet").className = "form-control  is-valid";
+        document.getElementById("nomePet").className = "form-control";
     }
 }
 function validarIdade(){
@@ -26,21 +26,21 @@ function validarIdade(){
     }else if(document.getElementById("idadePet").value < 0){
         document.getElementById("erro-idade").textContent = "Informe uma idade valida";
     } else {
-        document.getElementById("idadePet").className = "form-control  is-valid";
+        document.getElementById("idadePet").className = "form-control";
     }
 }
 function validarPeso(){
     if(document.getElementById("pesoPet").value == ""){
         document.getElementById("pesoPet").className = "form-control  is-invalid";
     }else{
-        document.getElementById("pesoPet").className = "form-control  is-valid";
+        document.getElementById("pesoPet").className = "form-control";
     }
 }
 function validarRaca(){
     if(document.getElementById("racaPet").value == ""){
         document.getElementById("racaPet").className = "form-control  is-invalid";
     }else{
-        document.getElementById("racaPet").className = "form-control  is-valid";
+        document.getElementById("racaPet").className = "form-control";
     }
 
 }
@@ -48,6 +48,6 @@ function validarCor(){
     if(document.getElementById("corPet").value == ""){
         document.getElementById("corPet").className = "form-control  is-invalid";
     }else{
-        document.getElementById("corPet").className = "form-control  is-valid";
+        document.getElementById("corPet").className = "form-control";
     }
 }

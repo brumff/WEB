@@ -12,21 +12,21 @@ function validarNome(){
     if(document.getElementById("nomeServico").value == ""){
         document.getElementById("nomeServico").className = "form-control  is-invalid";
     }else{
-        document.getElementById("nomeServico").className = "form-control  is-valid";
+        document.getElementById("nomeServico").className = "form-control";
     }
 }
 function validarDescricao(){
     if(document.getElementById("descricaoServico").value == ""){
         document.getElementById("descricaoServico").className = "form-control  is-invalid";
     }else{
-        document.getElementById("descricaoServico").className = "form-control  is-valid";
+        document.getElementById("descricaoServico").className = "form-control";
     }
 }
 function validarPreco(){
     if(document.getElementById("precoServico").value == ""){
         document.getElementById("precoServico").className = "form-control  is-invalid";
     }else{
-        document.getElementById("precoServico").className = "form-control  is-valid";
+        document.getElementById("precoServico").className = "form-control";
     }
 }
 /*validar os campos check */

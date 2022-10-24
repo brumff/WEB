@@ -65,6 +65,10 @@
 
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -152,7 +156,7 @@
                                   </div>
                                   <div class="form-group">
                                     <label for="precoServico" class="form-label">Preço do serviço</label>
-                                    <input type="text" class="form-control" id="precoServico"
+                                    <input type="text" class="form-control" id="precoServico" onkeypress="$(this).mask('#.##,00', {reverse: true});"
                                         placeholder="Digite o preço do serviço" required>
                                         <div class="invalid-feedback">
                                           Por favor, informe o preço.

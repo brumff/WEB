@@ -1,13 +1,3 @@
-/*mascara CPF*/
-function mascara_cpf(){
-    var cpf = document.getElementById("cpfDono")
-    if(cpf.value.length == 3 || cpf.value.length == 7){
-        cpf.value += "."
-    }  else if(cpf.value.length == 11){
-        cpf.value += "-"
-    }
-}
-/*mascara para telefone */
 /*verificar se e-mail é valido*/
 /*atualiza campo*/
 document.getElementById("nomeDonoPet").addEventListener("keypress",()=>validarNome());

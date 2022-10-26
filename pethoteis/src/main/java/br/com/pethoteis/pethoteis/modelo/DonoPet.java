@@ -1,4 +1,4 @@
-package br.com.pethoteis.modelo;
+package br.com.pethoteis.pethoteis.modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

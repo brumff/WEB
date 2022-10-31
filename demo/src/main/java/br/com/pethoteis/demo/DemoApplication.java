@@ -1,13 +1,13 @@
-package br.com.pethoteis.pethoteis;
+package br.com.pethoteis.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PethoteisApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PethoteisApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 }

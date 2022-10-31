@@ -1,10 +1,10 @@
-package br.com.pethoteis.pethoteis;
+package br.com.pethoteis.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PethoteisApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html" >
     <title>Cadastro do Dono Pet</title>
-
-<link href="../bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+   
+<link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -119,7 +120,7 @@
                   <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                      <form class="needs-validation" novalidate>
+                      <form method="post" class="needs-validation" novalidate>
                           <div class="form-group">
                             <label for="nomeDonoPet" class="form-label">Nome Completo</label>
                             <input type="text" class="form-control" id="nomeDonoPet" placeholder="Digite o seu nome" value="" required>
@@ -199,10 +200,10 @@
   </main>
 </div>
 
-    <script src="../bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
 
       <script src="../js/form-validation.js"></script>
 
-      <script src="../js/cadastrodonopet.js"></script>
+      <script src="/src/main/resources/static/materialize/js/cadastrodonopet.js"></script>
   </body>
 </html>

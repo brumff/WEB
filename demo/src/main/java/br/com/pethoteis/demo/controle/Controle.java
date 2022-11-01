@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.pethoteis.demo.modelo.DonoPet;
 import br.com.pethoteis.demo.repositorio.repositorio;
@@ -20,6 +22,13 @@ public class Controle {
 
     @Autowired
     private repositorio acao;
+    
+    @RequestMapping(value = "/teste", method = RequestMethod.GET)
+    public ModelAndView index(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/html/cadastrodonopet");
+        return mv;
+    }
 
     //rota cadastro
     @PostMapping("/demo")
@@ -56,10 +65,10 @@ public class Controle {
         return acao.findByNomeOrderByIdadeDesc("null");
     }
     //primeira rota
-    @GetMapping("")
-    public String mensagem(){
-        return "Hellou World";
-    }
+   // @GetMapping("")
+    //public String mensagem(){
+      //  return "Hellou World";
+  // }
     //não tem suporte 
     @GetMapping("/boasVindas/{nome}")
     public String boasVindas(@PathVariable String nome){

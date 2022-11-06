@@ -120,24 +120,24 @@
                   <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
-                      <form method="post" class="needs-validation" novalidate>
+                      <form method="post" th:action="InsertDonoPet" th:object="${DonoPet}" class="needs-validation" novalidate>
                           <div class="form-group">
                             <label for="nomeDonoPet" class="form-label">Nome Completo</label>
-                            <input type="text" class="form-control" id="nomeDonoPet" placeholder="Digite o seu nome" value="" required>
+                            <input type="text" class="form-control" id="nomeDonoPet" placeholder="Digite o seu nome" th:field="*{nome}" value="" required>
                             <div class="invalid-feedback">
                               Por favor, informe o nome.
                             </div>                         
                           </div>
                             <div class="form-group">
                               <label for="cpfDono" class="form-label">CPF</label>
-                              <input type="text" class="form-control" id="cpfDono" maxlength="14" onkeyup="$(this).mask('000.000.000-00')" placeholder="Digite seu CPF" required>
+                              <input type="text" class="form-control" id="cpfDono" maxlength="14" onkeyup="$(this).mask('000.000.000-00')" placeholder="Digite seu CPF" th:field="*{cpf}"required>
                               <div id="erro-cpf" class="invalid-feedback">
                                 Por favor, informe o CPF.
                               </div>  
                             </div>
                             <div class="form-group">
                               <label for="telefoneDono" class="form-label">Telefone</label>
-                              <input type="text" class="form-control" id="telefoneDono" onkeypress="$(this).mask('(00) 0000-00009')" placeholder="Digite seu telefone">
+                              <input type="text" class="form-control" id="telefoneDono" onkeypress="$(this).mask('(00) 0000-00009')" placeholder="Digite seu telefone" th:field="*{telefone}">
                               <div class="invalid-feedback">
                                 Por favor, informe o telefone.
                               </div> 
@@ -149,21 +149,11 @@
                                 Por favor, informe a data de nascimento.
                               </div> 
                             </div>
-                            <div class="form-group">
+                           <!-- <div class="form-group">
                               <h4 class="mb-1">Genero</h4>
-                              <div class="form-check">
-                                <input id="feminino" name="genero" type="radio" class="form-check-input" checked required>
-                                <label class="form-check-label" for="feminino">Feminino</label>
-                              </div>
-                              <div class="form-check">
-                                <input id="masculino" name="genero" type="radio" class="form-check-input" required>
-                                <label class="form-check-label" for="masculino">Masculino</label>
-                              </div>
-                              <div class="form-check">
-                                  <input id="masculino" name="outro" type="radio" class="form-check-input" required>
-                                  <label class="form-check-label" for="outro">Outro</label>
-                                </div>
-                            </div>
+                              <select class="form-control"></select>
+                               <option th:each="genero : ${T(br.com.pethoteis.demo.Enum.Genero).value()}" th:value="${genero}" th:text="${genero}"></option> 
+                            </div> -->
                             <div class="form-group">
                               <h4 class="mb-3">Informações para acesso</h4>
                               <label for="emailDonoDoPet" class="form-label">E-mail</label>
@@ -183,15 +173,14 @@
                               </div>
                             </div>    
 
-                      </form>
+                      
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                      <button type="submit" class="btn btn-primary" onclick="validar()">Cadastrar</button>
-                    </div>
-                    <div class="modal-footer">
-                      
-                    </div>
+                      <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </div>                      
+                  </div>
+                </form>
           </div>
       </div>
   </div>

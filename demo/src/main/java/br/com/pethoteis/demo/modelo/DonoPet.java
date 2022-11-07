@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import br.com.pethoteis.demo.Enum.Genero;
 
@@ -24,6 +25,9 @@ public class DonoPet {
     private String senha;
     private String confSenha;
     private String idade;
+   // @ManyToOne
+    //private Pet pet;
+
     public int getCodigo() {
         return codigo;
     }
@@ -84,7 +88,12 @@ public void setIdade(String idade) {
     public void setConfSenha(String confSenha) {
         this.confSenha = confSenha;
     }
-    
+   /*  public Pet getPet() {
+        return pet;
+    }
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }*/
 
     
 }

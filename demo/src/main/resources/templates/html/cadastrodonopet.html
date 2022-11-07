@@ -157,17 +157,17 @@
                             <div class="form-group">
                               <h4 class="mb-3">Informações para acesso</h4>
                               <label for="emailDonoDoPet" class="form-label">E-mail</label>
-                              <input type="email" class="form-control" id="emailDonoDoPet" placeholder="Digite seu e-mail" required>
+                              <input type="email" class="form-control" id="emailDonoDoPet" placeholder="Digite seu e-mail" th:field="*{email}" required>
                               <div class="invalid-feedback">
                                 Por favor, informe o e-mail.
                               </div> 
                               <label for="senhaDonoDoPet" class="form-label">Confirmação da senha</label>
-                              <input type="password" class="form-control" id="senhaDonoDoPet" placeholder="Digite a senha" required>
+                              <input type="password" class="form-control" id="senhaDonoDoPet" placeholder="Digite a senha" th:field="*{senha}" required>
                               <div class="invalid-feedback">
                                 Por favor, informe a senha.
                               </div>
                               <label for="confSenhaDonoDoPet" class="form-label">Confirmação da senha</label>
-                              <input type="password" class="form-control" id="confSenhaDonoDoPet" placeholder="Digite novamente a senha" required>
+                              <input type="password" class="form-control" id="confSenhaDonoDoPet" placeholder="Digite novamente a senha" th:field="*{confSenha}"  required>
                               <div class="invalid-feedback">
                                 Por favor, informe a senha novamente.
                               </div>

@@ -70,58 +70,65 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+
 <body class="bg-light"></body>
 <header class="p-3 mb-3 border-bottom">
-  
+
 </header>
 
 <div class="container">
-    <main>
-        <div id = "OutraJanela" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"     aria-labelledby="myLargeModalLabel" aria-hidden="true"></div>
-                <div class="modal-body">
-                        <form method="post" th:action="alterarpet" th:object="${pet}"  class="needs-validation" novalidate>
-                            <input type="hidden" th:field="*{codigo}">
-                            <div class="form-group">
-                              <h4 class="mb-3">Informações do Pet</h4>
-                              <label for="nomePet" class="form-label">Nome do Pet</label>
-                              <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" th:field="*{nomePet}" required>
-                              <div class="invalid-feedback">
-                                Por favor, informe o nome.
-                              </div>
-                            </div>
-                              <div class="form-group">
-                                <label for="idadePet" class="form-label">Idade do Pet</label>
-                                 <input type="number" class="form-control" id="idadePet" placeholder="Digite a idade do pet" th:field="*{idade}"required>
-                                 <div  id="erro-ida   de"  class="invalid-feedback">
-                                  Por favor, informe a idade.<i class="fas fa-id-badge    "></i>.
-                                </div>
-                                </div>
-                              <!--<div class="form-group">
+  <main>
+    <div id="OutraJanela" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+      aria-labelledby="myLargeModalLabel" aria-hidden="true" th:id="OutraJanela+#{pet.codigo}"></div>
+    <div class="modal-body">
+      <form method="post" th:action="alterarpet" th:object="${pet}" class="needs-validation" novalidate>
+        <input type="hidden" th:field="*{codigo}">
+        <div class="form-group">
+          <h4 class="mb-3">Informações do Pet</h4>
+          <label for="nomePet" class="form-label">Nome do Pet</label>
+          <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" th:field="*{nomePet}"
+            required>
+          <div class="invalid-feedback">
+            Por favor, informe o nome.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="idadePet" class="form-label">Idade do Pet</label>
+          <input type="number" class="form-control" id="idadePet" placeholder="Digite a idade do pet"
+            th:field="*{idade}" required>
+          <div id="erro-ida   de" class="invalid-feedback">
+            Por favor, informe a idade.<i class="fas fa-id-badge    "></i>.
+          </div>
+        </div>
+        <!--<div class="form-group">
                                 <label for="dtNascPet" class="form-label">Data de Nascimento </label>
                                 <input type="date" class="form-control" id="dtNascPet" placeholder="">
                               </div>-->
-                              <div class="form-group">
-                                <label for="pesoPet" class="form-label">Peso do Pet</label>
-                                <input type="number" class="form-control" id="pesoPet" maxlength="5" onkeypress="$(this).mask('00,00', {reverse: true});" placeholder="Digite o peso de pet" th:field="*{peso}"required>
-                                <div class="invalid-feedback">
-                                  Por favor, informe o peso.
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="racaPet" class="form-label">Raça do Pet</label>
-                                <input type="text" class="form-control" id="racaPet" placeholder="Digite a raça do Pet" th:field="*{raca}"required>
-                                <div class="invalid-feedback">
-                                  Por favor, informe a raça.
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="corPet" class="form-label">Cor do Pet</label>
-                                <input type="text" class="form-control" id="corPet" placeholder="Cor do Pet" th:field="*{cor}" required>
-                                <div class="invalid-feedback">
-                                  Por favor, informe o cor.
-                                </div>
-                              </div>
-                              <!--<div class="form-group">
+        <div class="form-group">
+          <label for="pesoPet" class="form-label">Peso do Pet</label>
+          <input type="number" class="form-control" id="pesoPet" maxlength="5"
+            onkeypress="$(this).mask('00,00', {reverse: true});" placeholder="Digite o peso de pet" th:field="*{peso}"
+            required>
+          <div class="invalid-feedback">
+            Por favor, informe o peso.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="racaPet" class="form-label">Raça do Pet</label>
+          <input type="text" class="form-control" id="racaPet" placeholder="Digite a raça do Pet" th:field="*{raca}"
+            required>
+          <div class="invalid-feedback">
+            Por favor, informe a raça.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="corPet" class="form-label">Cor do Pet</label>
+          <input type="text" class="form-control" id="corPet" placeholder="Cor do Pet" th:field="*{cor}" required>
+          <div class="invalid-feedback">
+            Por favor, informe o cor.
+          </div>
+        </div>
+        <!--<div class="form-group">
                                 <h4 class="mb-1">Genero</h4>
                                 <div class="form-check">
                                   <input id="femea" name="genero" type="radio" class="form-check-input" checked required>
@@ -132,33 +139,33 @@
                                   <label class="form-check-label" for="macho">Macho</label>
                                 </div>
                               </div>-->
-                              <div class="form-group">
-                                <label for="obspet" class="form-label">Observações</label>
-                                <input type="text" class="form-control" id="obspet" placeholder="" th:field="*{obs}"required>
-                              </div>
-                            </div>
-                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                             <button type="submit" class="btn btn-primary" onclick="validar()">Enviar</button>
-                      </div>
-                    </form>
-            </div>
-        
+        <div class="form-group">
+          <label for="obspet" class="form-label">Observações</label>
+          <input type="text" class="form-control" id="obspet" placeholder="" th:field="*{obs}" required>
         </div>
     </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      <button type="submit" class="btn btn-primary" onclick="validar()">Enviar</button>
+    </div>
+    </form>
+</div>
 
-      <div class="py-5 text-center">
-      
-      </div>
-    
-  </main>
-  </div>
+</div>
+</div>
 
-  <script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
+<div class="py-5 text-center">
 
-  <script src="../js/form-validation.js"></script>
+</div>
 
-  <script src="../js/cadastrodopet.js"></script>
+</main>
+</div>
+
+<script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
+
+<script src="../js/form-validation.js"></script>
+
+<script src="../js/cadastrodopet.js"></script>
 </body>
 
 </html>

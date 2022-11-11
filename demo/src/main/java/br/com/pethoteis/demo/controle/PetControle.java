@@ -20,16 +20,23 @@ public class PetControle {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("html/cadastrodopet");
         mv.addObject("Pet", new Pet());
-        mv.addObject("petList", petrepositorio.findAll());
+        // mv.addObject("petList", petrepositorio.findAll());
         return mv;
     }
     @PostMapping("InsertPet")
     public ModelAndView inserirPet(Pet pet){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("redirect:/inserirPet");
+        mv.setViewName("redirect:/html/listarpet");
         petrepositorio.save(pet);
         return mv;
     }    
+    @GetMapping("lista-pet")
+    public ModelAndView listagemPet(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("html/listarpet");
+        mv.addObject("petList", petrepositorio.findAll());
+        return mv;
+    }
     @GetMapping("/alterarpet/{codigo}")
     public ModelAndView alterar(@PathVariable("codigo") Integer codigo){
         ModelAndView mv = new ModelAndView();

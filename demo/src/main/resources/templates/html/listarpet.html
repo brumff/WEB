@@ -96,67 +96,54 @@
           <li><a class="dropdown-item" href="#">Dono Pet</a></li>
         </ul>
       </div>
+
     </div>
 </header>
-<main>
-  <div class="row">
-    <div class="d-flex justify-content-center">
-      <form method="post" th:action="InsertPet" th:object="${pet}" class="needs-validation" novalidate>
-        <h3 class="">Cadastro do Pet</h3>
-        <h4 class="">Informações do Pet</h4>
-        <div class="form-group">
-          <label for="nomePet" class="form-label">Nome do Pet</label>
-          <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" th:field="*{nomePet}"
-            required>
-          <div class="invalid-feedback">
-            Por favor, informe o nome.
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="idadePet" class="form-label">Idade do Pet</label>
-          <input type="number" class="form-control" id="idadePet" placeholder="Digite a idade do pet"
-            th:field="*{idade}" required>
-          <div id="erro-ida   de" class="invalid-feedback">
-            Por favor, informe a idade
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="pesoPet" class="form-label">Peso do Pet</label>
-          <input type="number" class="form-control" id="pesoPet" maxlength="5"
-            onkeypress="$(this).mask('00,00', {reverse: true});" placeholder="Digite o peso de pet" th:field="*{peso}"
-            required>
-          <div class="invalid-feedback">
-            Por favor, informe o peso.
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="racaPet" class="form-label">Raça do Pet</label>
-          <input type="text" class="form-control" id="racaPet" placeholder="Digite a raça do Pet" th:field="*{raca}"
-            required>
-          <div class="invalid-feedback">
-            Por favor, informe a raça.
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="corPet" class="form-label">Cor do Pet</label>
-          <input type="text" class="form-control" id="corPet" placeholder="Cor do Pet" th:field="*{cor}" required>
-          <div class="invalid-feedback">
-            Por favor, informe o cor.
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="obspet" class="form-label">Observações</label>
-          <input type="text" class="form-control" id="obspet" placeholder="Observações" th:field="*{obs}" required>
-        </div>
-        <div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary" onclick="validar()">Enviar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</main>
 
+<div class="container">
+  <div class="row  g-3">
+    <div class="col-sm">
+      <h2>Cadastro do Pet</h2>
+    </div>
+    <div class="col-auto">
+      <a class="btn btn-primary" th:href="@{inserirPet}">
+        <i class="fas fa-edit"></i>Cadatrar </a>
+    </div>
+    <div class="row g-3">
+      <div class="col-sm">
+        <input type="search" class="form-control" id="pesquisaPet" placeholder="Pesquisa" required>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary">Pesquisar</button>
+      </div>
+    </div>
+  </div> <br>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nome do Pet</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" th:each="pet : ${petList} ">
+        <td th:text="${pet.nomePet}"></td>
+        <td th:text="${pet.idade}"></td>
+
+        <td>
+          <a class="btn btn-primary" th:href="@{alterarpet/{codigo}(codigo=${pet.codigo})}">
+            <i class="fas fa-edit"></i>Editar </a>
+
+          <a class="btn btn-danger" th:href="@{excluir/{codigo}(codigo=${pet.codigo})}">
+            <i class="fas fa-times"></i>Excluir </a>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
 

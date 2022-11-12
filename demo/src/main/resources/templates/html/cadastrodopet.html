@@ -99,11 +99,10 @@
     </div>
 </header>
 <main>
-  <div class="row">
-    <div class="d-flex justify-content-center">
+  <div class="container">
+    <div class="row col-md-5 offset-md-4">
       <form method="post" th:action="InsertPet" th:object="${pet}" class="needs-validation" novalidate>
-        <h3 class="">Cadastro do Pet</h3>
-        <h4 class="">Informações do Pet</h4>
+        <h3 class="text-center">Cadastro do Pet</h3>
         <div class="form-group">
           <label for="nomePet" class="form-label">Nome do Pet</label>
           <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" th:field="*{nomePet}"

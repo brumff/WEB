@@ -5,9 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <title>Cadastro do Pet</title>
+  <title>Pets</title>
 
   <link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/materialize/bootstrap-icons-1.10.1/" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -101,48 +102,45 @@
 </header>
 
 <div class="container">
-  <div class="row  g-3">
+  <div class="row g-3">
     <div class="col-sm">
-      <h2>Cadastro do Pet</h2>
+      <h2>Pet</h2> 
     </div>
     <div class="col-auto">
       <a class="btn btn-primary" th:href="@{inserirPet}">
         <i class="fas fa-edit"></i>Cadatrar </a>
     </div>
-    <div class="row g-3">
+    <div class="row g-1">
       <div class="col-sm">
-        <input type="search" class="form-control" id="pesquisaPet" placeholder="Pesquisa" required>
+        <input type="search" class="form-control" id="pesquisaPet" placeholder="Pesquisa">
       </div>
       <div class="col-auto">
         <button class="btn btn-primary">Pesquisar</button>
       </div>
     </div>
   </div> <br>
-
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Nome do Pet</th>
-        <th scope="col">Idade</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr scope="row" th:each="pet : ${petList} ">
-        <td th:text="${pet.nomePet}"></td>
-        <td th:text="${pet.idade}"></td>
-
-        <td>
-          <a class="btn btn-primary" th:href="@{alterarpet/{codigo}(codigo=${pet.codigo})}">
-            <i class="fas fa-edit"></i>Editar </a>
-
-          <a class="btn btn-danger" th:href="@{excluir/{codigo}(codigo=${pet.codigo})}">
-            <i class="fas fa-times"></i>Excluir </a>
-
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nome do Pet</th>
+          <th scope="col">Idade</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr scope="row" th:each="pet : ${petList}">
+          <td class="col-6" th:text="${pet.nomePet}"></td>
+          <td class="col-4" th:text="${pet.idade}"></td>
+          <td class="col">
+            <a class="btn btn-primary" th:href="@{alterarpet/{codigo}(codigo=${pet.codigo})}">Editar</a>
+            <a class="btn btn-danger" th:href="@{excluir/{codigo}(codigo=${pet.codigo})}">Excluir</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 </div>
 
 <script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>

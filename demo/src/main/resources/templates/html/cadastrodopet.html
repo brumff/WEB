@@ -113,16 +113,14 @@
         </div>
         <div class="form-group">
           <label for="idadePet" class="form-label">Idade do Pet</label>
-          <input type="number" class="form-control" id="idadePet" placeholder="Digite a idade do pet"
-            th:field="*{idade}" required>
-          <div id="erro-ida   de" class="invalid-feedback">
+          <input type="number" class="form-control" id="idadePet" placeholder="Digite a idade do pet" th:field="*{idade}" required>
+          <div id="erro-idade" class="invalid-feedback">
             Por favor, informe a idade
           </div>
         </div>
         <div class="form-group">
           <label for="pesoPet" class="form-label">Peso do Pet</label>
-          <input type="number" class="form-control" id="pesoPet" maxlength="5"
-            onkeypress="$(this).mask('00,00', {reverse: true});" placeholder="Digite o peso de pet" th:field="*{peso}"
+          <input type="number" class="form-control" id="pesoPet" maxlength="5" placeholder="Digite o peso de pet" th:field="*{peso}"
             required>
           <div class="invalid-feedback">
             Por favor, informe o peso.
@@ -146,22 +144,19 @@
         <div class="form-group">
           <label for="obspet" class="form-label">Observações</label>
           <input type="text" class="form-control" id="obspet" placeholder="Observações" th:field="*{obs}" required>
-        </div>
-        <div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary" onclick="validar()">Enviar</button>
+        </div><br>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" onclick="validar()">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
         </div>
       </form>
     </div>
   </div>
 </main>
 
-
 <script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
 
-<script src="../js/form-validation.js"></script>
-
-<script src="../js/cadastrodopet.js"></script>
+<script src="/materialize/js/cadastrodopet.js"></script>
 </body>
 
 </html>

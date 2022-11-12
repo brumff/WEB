@@ -26,7 +26,7 @@ public class PetControle {
     @PostMapping("InsertPet")
     public ModelAndView inserirPet(Pet pet){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("redirect:/html/listarpet");
+        mv.setViewName("redirect:/lista-pet");
         petrepositorio.save(pet);
         return mv;
     }    
@@ -51,5 +51,10 @@ public class PetControle {
         petrepositorio.save(pet);
         mv.setViewName("redirect:/inserirPet");
         return mv;
+    }
+    @GetMapping("/excluir/{codigo}")
+    public String excluirPet(@PathVariable("codigo") Integer codigo){
+        petrepositorio.deleteById(codigo);
+        return "redirect:/lista-pet";
     }
 }

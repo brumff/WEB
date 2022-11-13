@@ -20,7 +20,6 @@ public class PetControle {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("html/cadastrodopet");
         mv.addObject("Pet", new Pet());
-        // mv.addObject("petList", petrepositorio.findAll());
         return mv;
     }
     @PostMapping("InsertPet")

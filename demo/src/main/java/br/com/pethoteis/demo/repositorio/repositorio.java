@@ -20,5 +20,5 @@ public interface repositorio extends CrudRepository<DonoPet, Integer>{
     //Ordernar
     List<DonoPet> findByOrderByNome();
 
-    List<DonoPet> findByNomeOrderByIdadeDesc(String nome);
+    // List<DonoPet> findByNomeOrderByIdadeDesc(String nome);
 }

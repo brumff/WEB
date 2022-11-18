@@ -14,19 +14,21 @@ import br.com.pethoteis.demo.repositorio.PetRepositorio;
 public class PetControle {
     @Autowired
     private PetRepositorio petrepositorio;
+    private Pet pet;
+    
 
-    @GetMapping("/inserirPet")
+    @GetMapping("perfil-donopet/{codigo}/inserirPet")
     public ModelAndView InsertPet(Pet pet){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("html/cadastrodopet");
         mv.addObject("Pet", new Pet());
         return mv;
     }
-    @PostMapping("InsertPet")
+    @PostMapping("perfil-donopet/{codigo}/InsertPet")
     public ModelAndView inserirPet(Pet pet){
         ModelAndView mv = new ModelAndView();
+        pet = petrepositorio.save(pet);
         mv.setViewName("redirect:/lista-pet");
-        petrepositorio.save(pet);
         return mv;
     }    
     @GetMapping("lista-pet")

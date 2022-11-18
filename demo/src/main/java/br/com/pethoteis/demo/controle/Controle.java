@@ -60,10 +60,10 @@ public class Controle {
     public List<DonoPet> ordenarNomes(){
         return acao.findByOrderByNome();
     }
-    @GetMapping("/demo/ordenarNomes2")
-    public List<DonoPet> ordenarNomes2(){
-        return acao.findByNomeOrderByIdadeDesc("null");
-    }
+    // @GetMapping("/demo/ordenarNomes2")
+    // public List<DonoPet> ordenarNomes2(){
+    //     return acao.findByNomeOrderByIdadeDesc("null");
+    // }
     //primeira rota
    // @GetMapping("")
     //public String mensagem(){

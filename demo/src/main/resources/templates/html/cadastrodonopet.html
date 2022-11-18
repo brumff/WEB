@@ -110,6 +110,8 @@
             <label for="nomeDonoPet" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nomeDonoPet" placeholder="Digite seu nome" th:field="*{nome}"
               required>
+              <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}"></div>
+            <label class="validation-message" th:erros="*{nome}"></label>
             <div class="invalid-feedback">
               Por favor, informe o nome.
             </div>

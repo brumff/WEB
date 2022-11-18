@@ -2,19 +2,26 @@ package br.com.pethoteis.demo.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+
+import br.com.pethoteis.demo.Enum.Sexo;
 
 @Entity
 public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo;
-   /*  @OneToMany
-    private DonoPet donePet;*/
+    private Integer codigo;
+    @ManyToOne(targetEntity=DonoPet.class)
+    @JoinColumn(name="donopet_id", referencedColumnName = "codigo") 
+    private DonoPet donoPet;
     @Column(length=200)
     private String nomePet;
     @Column(length=2)
@@ -25,7 +32,8 @@ public class Pet {
     private String raca;
     @Column(length=100)
     private String cor;
-    // enum do genero
+    @Enumerated(EnumType.STRING)
+    private Sexo sexo;
     @Column(length=300)
     private String obs;
     
@@ -35,6 +43,12 @@ public class Pet {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
+    /*public DonoPet getDonoPet() {
+        return donoPet;
+    }
+    public void setDonoPet(DonoPet donoPet) {
+        this.donoPet = donoPet;
+    }*/
     public String getNomePet() {
         return nomePet;
     }
@@ -65,10 +79,17 @@ public class Pet {
     public void setCor(String cor) {
         this.cor = cor;
     }
+    public Sexo getSexo() {
+        return sexo;
+    }
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
     public String getObs() {
         return obs;
     }
     public void setObs(String obs) {
         this.obs = obs;
     }
+
 }

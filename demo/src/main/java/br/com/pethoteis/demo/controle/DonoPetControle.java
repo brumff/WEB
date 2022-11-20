@@ -12,8 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.pethoteis.demo.modelo.DonoPet;
 import br.com.pethoteis.demo.repositorio.DonoPetRepositorio;
-import br.com.pethoteis.demo.service.ServiceDonoPet;
-
 
 
 @Controller
@@ -21,10 +19,8 @@ public class DonoPetControle {
     @Autowired
     private DonoPetRepositorio donopetrepositorio;
     private DonoPet dono;
-    @Autowired
-    private ServiceDonoPet serviceDonoPet;
-    
-    @GetMapping("/inserirDonoPet")
+
+    @GetMapping("inserirDonoPet")
     public ModelAndView InsertDonoPet(DonoPet donoPet){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("html/cadastrodonopet");

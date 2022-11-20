@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 import br.com.pethoteis.demo.modelo.DonoPet;
 @Repository
 public interface DonoPetRepositorio extends JpaRepository<DonoPet, Integer>{
-    public List<DonoPet> findByEmail();
+   
 }

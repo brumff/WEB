@@ -46,7 +46,7 @@ public class PetControle {
         mv.addObject("pet", pet);
         return mv;
     }
-    @PostMapping("/lista-pet/alterarpet/{codigo}")
+    @PostMapping("lista-pet/alterarpet/{codigo}")
     public ModelAndView alterar(Pet pet){
         ModelAndView mv = new ModelAndView();
         petrepositorio.save(pet);

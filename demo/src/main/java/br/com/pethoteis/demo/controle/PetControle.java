@@ -17,28 +17,28 @@ public class PetControle {
     private Pet pet;
     
 
-    @GetMapping("perfil-donopet/{codigo}/inserirPet")
+    @GetMapping("/inserirPet")
     public ModelAndView InsertPet(Pet pet){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("html/cadastrodopet");
         mv.addObject("Pet", new Pet());
         return mv;
     }
-    @PostMapping("perfil-donopet/{codigo}/InsertPet")
+    @PostMapping("/InsertPet")
     public ModelAndView inserirPet(Pet pet){
         ModelAndView mv = new ModelAndView();
         pet = petrepositorio.save(pet);
         mv.setViewName("redirect:/lista-pet");
         return mv;
     }    
-    @GetMapping("lista-pet")
+    @GetMapping("perfil-donopet/{codigo}/lista-pet")
     public ModelAndView listagemPet(){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("html/listarpet");
         mv.addObject("petList", petrepositorio.findAll());
         return mv;
     }
-    @GetMapping("/alterarpet/{codigo}")
+    @GetMapping("lista-pet/alterarpet/{codigo}")
     public ModelAndView alterar(@PathVariable("codigo") Integer codigo){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("html/alterarpet");
@@ -46,7 +46,7 @@ public class PetControle {
         mv.addObject("pet", pet);
         return mv;
     }
-    @PostMapping("/alterarpet")
+    @PostMapping("/lista-pet/alterarpet/{codigo}")
     public ModelAndView alterar(Pet pet){
         ModelAndView mv = new ModelAndView();
         petrepositorio.save(pet);
@@ -57,5 +57,11 @@ public class PetControle {
     public String excluirPet(@PathVariable("codigo") Integer codigo){
         petrepositorio.deleteById(codigo);
         return "redirect:/lista-pet";
+    }
+    @GetMapping("/")
+    public ModelAndView login(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("html/telalogin");
+        return mv;
     }
 }

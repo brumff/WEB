@@ -119,7 +119,7 @@
         <label for="confSenha" class="form-label">Confirmação senha</label>
         <input class="form-control" type="text" th:field="${donoPet.confSenha}" disabled> <br>
         <a class="btn btn-primary" th:href="@{alterardonopet/{codigo}(codigo=${donoPet.codigo})}">Editar</a>
-        <a class="btn btn-primary" th:href="@{{codigo}/inserirPet(codigo=${donoPet.codigo})}">Pets</a>
+        <a class="btn btn-primary" th:href="@{{codigo}/lista-pet(codigo=${donoPet.codigo})}">Pets</a>
         <a class="btn btn-secondary">Voltar</a>
     </div>
     </form>

@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.pethoteis.demo.modelo.DonoPet;
 import br.com.pethoteis.demo.repositorio.DonoPetRepositorio;
+import br.com.pethoteis.demo.service.ServiceDonoPet;
 
 
 
@@ -20,6 +21,8 @@ public class DonoPetControle {
     @Autowired
     private DonoPetRepositorio donopetrepositorio;
     private DonoPet dono;
+    @Autowired
+    private ServiceDonoPet serviceDonoPet;
     
     @GetMapping("/inserirDonoPet")
     public ModelAndView InsertDonoPet(DonoPet donoPet){
@@ -67,7 +70,7 @@ public class DonoPetControle {
     public ModelAndView alterarDonoPet(DonoPet donoPet){
         ModelAndView mv = new ModelAndView();
         dono = donopetrepositorio.save(donoPet);
-        mv.setViewName("redirect:/perfil-donopet" +  dono.getCodigo());
+        mv.setViewName("redirect:/perfil-donopet");
         return mv;
     }
 }

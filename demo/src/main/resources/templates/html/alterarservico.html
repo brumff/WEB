@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Editar Serviço</title>
+
+    <link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+</head>
+
+<body class="bg-light">
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="../html/paginainicial.html" class="nav-link px-2  link-dark">Home</a></li>
+                    <li><a href="../html/sobrenos.html" class="nav-link px-2 link-dark">Sobre Nós</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Parceiros</a></li>
+                </ul>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Login
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Parceiro</a></li>
+                        <li><a class="dropdown-item" href="#">Dono Pet</a></li>
+                    </ul>
+                </div>
+            </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row col-md-5 offset-md-4">
+                <form method="post" th:action="alterar" th:object="${servicos}" class="needs-validation" novalidate>
+                    <input type="hidden" th:field="*{codigo}">
+                    <h3 class="text-center">Editar Serviço</h3>
+                    <div class="form-group">
+                        <label for="nomeServico" class="form-label">Nome do Serviço</label>
+                        <input typr="text" class="form-control" id="nomeServico" placeholder="Digite nome do serviço"
+                            th:field="*{nomeServico}">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" th:field="*{servico}">
+                            <option th:each="servico : ${T(br.com.pethoteis.demo.Enum.Servico).values()}"
+                                th:value="${servico}" th:text="${servico.servico}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao" class="form-label">Descrição</label>
+                        <input typr="text" class="form-control" id="descricao"
+                            placeholder="Digite a descrição do serviço" th:field="*{descricao}">
+                    </div>
+                    <div class="form-group">
+                        <h5>Porte</h5>
+                        <input type="checkbox" th:field="*{mini}">
+                        <label class="form-label">Mini</label>
+                        <input type="checkbox" th:field="*{p}">
+                        <label class="form-label">P</label>
+                        <input type="checkbox" th:field="*{m}">
+                        <label class="form-label">M</label>
+                        <input type="checkbox" th:field="*{g}">
+                        <label class="form-label">G</label>
+                        <input type="checkbox" th:field="*{xg}">
+                        <label class="form-label">XG</label>
+                    </div>
+                    <div class="form-group">
+                        <h5>Dias disponiveis</h5>
+                        <input type="checkbox" th:field="*{seg}">
+                        <label class="form-label">Seg</label>
+                        <input type="checkbox" th:field="*{ter}">
+                        <label class="form-label">Ter</label>
+                        <input type="checkbox" th:field="*{qua}">
+                        <label class="form-label">Qua</label>
+                        <input type="checkbox" th:field="*{qui}">
+                        <label class="form-label">Qui</label>
+                        <input type="checkbox" th:field="*{sex}">
+                        <label class="form-label">Sex</label>
+                        <input type="checkbox" th:field="*{sab}">
+                        <label class="form-label">Sab</label>
+                        <input type="checkbox" th:field="*{dom}">
+                        <label class="form-label">Dom</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor" class="form-label">Valor do serviço</label>
+                        <input typr="text" class="form-control" id="valor" placeholder="Digite o valor"
+                            th:field="*{valor}">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" th:field="*{situacao}">
+                        <label class="form-label">Ativo</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" onclick="validar()">Salvar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
+
+    <script src="../js/form-validation.js"></script>
+
+    <script src="/src/main/resources/static/materialize/js/cadastrodonopet.js"></script>
+</body>
+
+</html>

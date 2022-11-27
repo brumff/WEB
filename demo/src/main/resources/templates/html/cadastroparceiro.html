@@ -8,7 +8,7 @@
   <meta http-equiv="Content-Type" content="text/html">
   <title>Cadastro Parceiro</title>
 
-  <link href="/src/main/resources/static/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -71,6 +71,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -101,121 +108,63 @@
         </div>
       </div>
   </header>
+
   <main>
     <div class="container">
       <div class="row col-md-5 offset-md-4">
-        <form method="post" th:action="InsertParceiro" th:object="${parceiro}" class="needs-validation" novalidate>
-          <h3 class="text-center">Cadastro Parceiro</h3>
+        <form method="post" th:action="cadastrar-parceiro" th:object="${parceiro}" class="needs-validation" novalidate>
+
+          <h3 class="text-center">Cadastro Parceiros</h3>
           <div class="form-group">
-            <label for="nomeDonoPet" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nomeDonoPet" placeholder="Digite seu nome" th:field="*{nome}"
-              required>
-            <div class="invalid-feedback">
-              Por favor, informe o nome.
-            </div>
+            <label for="nomeParceiro" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nomeParceiro" placeholder="Digite nome"
+              th:field="*{nomeParceiro}">
           </div>
           <div class="form-group">
-            <label for="cpf" class="form-label">CNPJ</label>
-            <input type="text" class="form-control" id="cpfDono" maxlength="14" onkeyup="$(this).mask('000.000.000-00')"
-              placeholder="Digite seu CPF" th:field="*{cpf}" required>
-            <div id="erro-cpf" class="invalid-feedback">
-              Por favor, informe o CPF.
-            </div>
+            <label for="CNPJ" class="form-label">CNPJ</label>
+            <input type="text" class="form-control" id="CNPJ" placeholder="Digite o CNPJ" th:field="*{cnpj}">
           </div>
           <div class="form-group">
-            <label for="telefoneDono" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="telefoneDono" onkeypress="$(this).mask('(00) 0000-00009')"
-              placeholder="Digite seu telefone" th:field="*{telefone}">
-            <div class="invalid-feedback">
-              Por favor, informe o telefone.
-            </div>
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="telefone" placeholder="Digite o telefone"
+              th:field="*{telefone}">
           </div>
           <div class="form-group">
-            <label for="emailDonoDoPet" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="emailDonoDoPet" placeholder="Digite seu e-mail"
-              th:field="*{email}" required>
-            <div class="invalid-feedback">
-              Por favor, informe o e-mail.
-            </div>
-            <div class="form-group">
-              <h4 class="mb-1">Serviços</h4>
-              <div class="my-2 form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="servico1" value="Hospedagem">
-                <label class="form-check-label" for="servico1">Hospedagem</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="servico2" value="Creche">
-                <label class="form-check-label" for="servico2">Creche</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="servico3" value="Pet sitter">
-                <label class="form-check-label" for="servico3">Pet sitter</label>
-              </div>
-            </div>
-            <!--  <div class="form-group">
-              <h4 class="mb-1">Horario de Funcionamento</h4>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="segunda" value="Segunda">
-                <label class="form-check-label" for="segunda">Segunda</label>
-                <label for="horario"></label>
-                <input type="time" id="horario" name="horario" required>
-                <label for="horario">ás</label>
-                <input type="time" id="horario" name="horario" required>                
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="terca" value="terca">
-                <label class="form-check-label" for="terca">Terça</label>
-                <label for="horario"></label>
-                <input type="time" id="horario" name="horario" required>
-                <label for="horario">ás</label>
-                <input type="time" id="horario" name="horario" required>                
-              </div>
-            </div>-->
-            <div class="form-group">
-              <label for="nomeProprietario" class="form-label">Nome do Proprietario</label>
-              <input type="text" class="form-control" id="nomeProprietario" placeholder="Digite o nome do proprietario"
-                required>
-            </div>
-            <div class="form-group">
-              <label for="cpfProprietario" class="form-label">CPF do Proprietario</label>
-              <input type="text" class="form-control" id="cpfProprietario" maxlength="14"
-                onkeyup="$(this).mask('000.000.000-00')" placeholder="Digite CPF do proprietario" required>
-            </div>
-            <div class="form-group">
-              <h4 class="mb-1">Situação</h4>
-              <div class="my-2">
-                <div class="form-check">
-                  <input id="ativo" name="situacao" type="radio" class="form-check-input" checked required>
-                  <label class="form-check-label" for="ativo">Ativo</label>
-                </div>
-                <div class="form-check">
-                  <input id="inativo" name="situacao" type="radio" class="form-check-input" required>
-                  <label class="form-check-label" for="inativo">Inativo</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="senhaParceiro" class="form-label">Senha</label>
-              <input type="password" class="form-control" id="senhaParceiro" placeholder="Digite a senha"
-                th:field="*{senha}" required>
-              <div class="invalid-feedback">
-                Por favor, informe a senha.
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="confSenhaParceiro" class="form-label">Confirmação da senha</label>
-              <input type="password" class="form-control" id="confSenhaParceiro" placeholder="Digite novamente a senha"
-                th:field="*{confSenha}" required>
-              <div class="invalid-feedback">
-                Por favor, informe a senha novamente.
-              </div>
-            </div><br>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary" onclick="validar()">Salvar</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            </div>
-        </form>
+            <label for="email" class="form-label">E-mail</label>
+            <input type="text" class="form-control" id="email" placeholder="Digite o e-mail" th:field="*{email}">
+          </div>
+          <div class="form-group">
+            <label for="cep" class="form-label">CEP</label>
+            <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" th:field="*{cep}">
+          </div>
+          <div class="form-group">
+            <label for="rua" class="form-label">Rua</label>
+            <input type="text" class="form-control" id="rua" placeholder="Digite o rua" th:field="*{rua}">
+          </div>
+          <div class="form-group">
+            <label for="numero" class="form-label">Nº</label>
+            <input type="number" class="form-control" id="numero" placeholder="Digite o nº" th:field="*{numero}">
+          </div>
+          <div class="form-group">
+            <label for="complemento" class="form-label">Complemento</label>
+            <input type="text" class="form-control" id="complemento" placeholder="Digite o complemento"
+              th:field="*{complemento}">
+          </div>
+          <div class="form-group">
+            <label for="complemento" class="form-label">Nome do proprietario</label>
+            <input type="text" class="form-control" id="nomeProprietario" placeholder="Digite o nome do proprietario" th:field="*{nomeProprietario}">
+          </div>
+          <div class="form-group">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senha" placeholder="Digite a senha" th:field="*{senha}"><br>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary" onclick="validar()">Salvar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+          </div>
       </div>
+      </form>
+    </div>
     </div>
   </main>
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta http-equiv="Content-Type" content="text/html">
-  <title>Cadastro do Dono Pet</title>
+  <title>Cadastro Parceiro</title>
 
   <link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -101,67 +101,35 @@
         </div>
       </div>
   </header>
-  <main>
-    <div class="container">
-      <div class="row col-md-5 offset-md-4">
-        <form method="post" th:action="alterardonopet" th:object="${donopet}" class="needs-validation" novalidate>
-          <h3 class="text-center">Editar Dono do Pet</h3>
-          <div class="form-group">
-            <label for="nomeDonoPet" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nomeDonoPet" placeholder="Digite seu nome" th:field="*{nome}"
-              required>
-            <div class="invalid-feedback">
-              Por favor, informe o nome.
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control" id="cpfDono" maxlength="14" onkeyup="$(this).mask('000.000.000-00')" placeholder="Digite seu CPF" th:field="*{cpf}"required>
-            <div id="erro-cpf" class="invalid-feedback">
-              Por favor, informe o CPF.
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="telefoneDono" class="form-label">Telefone</label>
-            <input type="text" class="form-control" id="telefoneDono" onkeypress="$(this).mask('(00) 0000-00009')" placeholder="Digite seu telefone" th:field="*{telefone}">
-            <div class="invalid-feedback">
-              Por favor, informe o telefone.
-            </div>
-          </div>
-          <!--<div class="form-group">
-            <h4 class="mb-1">Genero</h4>
-            <select>
-              <option th:each="genero : ${T(br.com.pethoteis.demo.Enum.Genero).value()}" th:value="${genero}" th:text="${genero}"></option>
-            </select>
-          </div>-->
-          <div class="form-group">
-            <label for="emailDonoDoPet" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="emailDonoDoPet" placeholder="Digite seu e-mail" th:field="*{email}" required>
-            <div class="invalid-feedback">
-              Por favor, informe o e-mail.
-            </div>
-            <div class="form-group">
-              <label for="senhaDonoDoPet" class="form-label">Confirmação da senha</label>
-              <input type="password" class="form-control" id="senhaDonoDoPet" placeholder="Digite a senha" th:field="*{senha}" required>
-              <div  class="invalid-feedback">
-                Por favor, informe a senha.
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="confSenhaDonoDoPet" class="form-label">Confirmação da senha</label>
-              <input type="password" class="form-control" id="confSenhaDonoDoPet" placeholder="Digite novamente a senha" th:field="*{confSenha}"  required>
-              <div class="invalid-feedback">
-                Por favor, informe a senha novamente.
-              </div>
-            </div><br>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary" onclick="validar()">Salvar</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-            </div>               
-        </form>
-      </div>
-    </div>
-  </main>
+  <div class="container">
+    <div class="row col-md-5 offset-md-4">
+      <form> 
+        <h3 class="text-center">Informações</h3>
+        <label for="nome" class="form-label">Nome</label>
+        <input class="form-control" type="text" th:field="${parceiro.nomeParceiro}" disabled>
+        <label for="nome" class="form-label">CNPJ</label>
+        <input class="form-control" type="text" th:field="${parceiro.cnpj}" disabled>
+        <label for="nome" class="form-label">Telefone</label>
+        <input class="form-control" type="text" th:field="${parceiro.telefone}" disabled>
+        <label for="nome" class="form-label">E-mail</label>
+        <input class="form-control" type="text" th:field="${parceiro.email}" disabled>
+        <label for="nome" class="form-label">CEP</label>
+        <input class="form-control" type="text" th:field="${parceiro.cep}" disabled>
+        <label for="nome" class="form-label">Rua</label>
+        <input class="form-control" type="text" th:field="${parceiro.rua}" disabled>
+        <label for="nome" class="form-label">Nº</label>
+        <input class="form-control" type="text" th:field="${parceiro.numero}" disabled>
+        <label for="nome" class="form-label">Complemento</label>
+        <input class="form-control" type="text" th:field="${parceiro.complemento}" disabled>
+        <label for="nome" class="form-label">Nome do proprietario</label>
+        <input class="form-control" type="text" th:field="${parceiro.nomeProprietario}" disabled>
+        <label for="nome" class="form-label">Senha</label>
+        <input class="form-control" type="text" th:field="${parceiro.senha}" disabled><br>
+        <a class="btn btn-primary" th:href="@{/alterar/{codigo}(codigo=${parceiro.codigo})}">Editar</a>
+        <a class="btn btn-primary" th:href="@{/lista-servicos}">Serviços</a>
+        <a class="btn btn-secondary">Voltar</a>
+    </form>
+  </div>
 
   <script src="/materialize/bootstrap-5.2.1-dist/js/bootstrap.bundle.js"></script>
 

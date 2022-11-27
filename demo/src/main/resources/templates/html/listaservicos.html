@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta http-equiv="Content-Type" content="text/html">
-  <title>Cadastro do Dono Pet</title>
+  <title>Cadastro Parceiro</title>
 
   <link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -103,23 +103,46 @@
   </header>
   <div class="container">
     <div class="row col-md-5 offset-md-4">
-      <form>
-        <label for="nome" class="form-label">Nome</label>
-        <input class="form-control" type="text" th:field="${donoPet.nome}" disabled>
-        <label for="cpf" class="form-label">CPF</label>
-        <input class="form-control" type="text" th:field="${donoPet.cpf}" disabled>
-        <label for="telefone" class="form-label">Telefone</label>
-        <input class="form-control" type="text" th:field="${donoPet.telefone}" disabled>
-        <label for="email" class="form-label">E-mail</label>
-        <input class="form-control" type="text" th:field="${donoPet.email}" disabled>
-        <label for="senha" class="form-label">Senha</label>
-        <input class="form-control" type="text" th:field="${donoPet.senha}" disabled>
-        <label for="confSenha" class="form-label">Confirmação senha</label>
-        <input class="form-control" type="text" th:field="${donoPet.confSenha}" disabled> <br>
-        <a class="btn btn-primary" th:href="@{alterardonopet/{codigo}(codigo=${donoPet.codigo})}">Editar</a>
-        <a class="btn btn-primary" th:href="@{{codigo}/lista-pet(codigo=${donoPet.codigo})}">Pets</a>
-        <a class="btn btn-secondary">Voltar</a>
-    </div>
+      <form> 
+        <div class="row g-3">
+          <div class="col-sm">
+            <h2>Serviços</h2> 
+          </div>
+          <div class="col-auto">
+            <a class="btn btn-primary" th:href="@{cadastrar-servico}">
+              <i class="fas fa-edit"></i>Cadastrar </a>
+          </div>
+          <div class="row g-1">
+            <div class="col-sm">
+              <input type="search" class="form-control" id="pesquisaServico" placeholder="Pesquisa">
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-primary">Pesquisar</button>
+            </div>
+          </div>
+        </div> <br>
+        <h3 class="text-center">Lista de serviços</h3>
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <th scope="col">Nome do Serviço</th>
+                <th scope="col">Serviço</th>    
+                <th scope="col">Valor</th>
+                <th scope="col">Ações</th>
+                
+            </thead>
+            <tbody>
+                <tr scope="row" th:each="servicos : ${servicoLista}">
+                    <td th:text="${servicos.nomeServico}"></td>
+                    <td th:text="${servicos.servico}"></td>
+                    <td th:text="${servicos.valor}"></td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{alterar/{codigo}(codigo=${servicos.codigo})}">Editar</a>
+                        <a class="btn btn-danger" th:href="@{excluir/{codigo}(codigo=${servicos.codigo})}">Excluir</a>
+                    </td>
+                </tr>        
+            </tbody>
+        </table>
     </form>
   </div>
 

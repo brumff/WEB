@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Pagina Inicial</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/demo/src/main/resources/static/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+<div class="container">
+    <form class="row gy-2 gx-3 align-items-center" method="post" th:action="pesquisar-servico" th:object="${servicos}">
+
+        <div class="col-auto">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="endereco" placeholder="Digite o endereço">
+        </div>
+        <div class="col-auto">
+            <input type="checkbox" th:field="*{seg}">
+            <label class="form-label">Seg</label>
+            <input type="checkbox" th:field="*{ter}">
+            <label class="form-label">Ter</label>
+            <input type="checkbox" th:field="*{qua}">
+            <label class="form-label">Qua</label>
+            <input type="checkbox" th:field="*{qui}">
+            <label class="form-label">Qui</label>
+            <input type="checkbox" th:field="*{sex}">
+            <label class="form-label">Sex</label>
+            <input type="checkbox" th:field="*{sab}">
+            <label class="form-label">Sab</label>
+            <input type="checkbox" th:field="*{dom}">
+            <label class="form-label">Dom</label>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary" type="submit">Pesquisar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,78 @@
+<!DOCTYPR html>
+
+    <html>
+    <!-- Este é um comentario no html fora do body -->
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <title>Seja nosso parceiro</title>
+
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
+
+        <!-- Bootstrap core CSS -->
+        <link href="../bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <title>Pagina Inicial</title>
+
+            <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
+
+            <!-- Bootstrap core CSS -->
+            <link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css"
+                rel="stylesheet">
+        </head>
+
+        <body>
+            <header class="p-3 mb-3 border-bottom">
+                <div class="container">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                        </a>
+
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li><a href="../html/paginainicial.html" class="nav-link px-2 link-dark">Home</a></li>
+                            <li><a href="../html/sobrenos.html" class="nav-link px-2 link-dark">Sobre Nós</a></li>
+                            <li><a href="#" class="nav-link px-2 link-dark">Parceiros</a></li>
+                        </ul>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Login
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Parceiro</a></li>
+                                <li><a class="dropdown-item" href="#">Dono Pet</a></li>
+                            </ul>
+                        </div>
+                    </div>
+            </header>
+            <div class="container">
+                <form class="row align-items-center" method="post" th:action="Parceiro" th:object="${parceiro}">
+                    <div class="col">
+                        <h2>Seja nosso parceiro</h2>
+                        <text>Aqui você divulgar seu hotel para pet!! 
+                        </text><br>
+                        <text>O cadastro é grátis e você pode incluir todos os serviços disponiveis!</text><br><br>
+                        <div class="d-grid gap-2">
+                        <a class="btn btn-primary" th:href="@{cadastrar-parceiro}">
+                            <i class="fas fa-edit"></i>Cadastrar </a>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <img src="/imagens/5461318-removebg-preview.png" class="img-fluid">
+                    </div>
+                </form>
+            </div>
+            </div>
+        </body>
+
+    </html>

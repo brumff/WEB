@@ -56,6 +56,13 @@ public class ParceiroControle {
         mv.setViewName("redirect:/perfil-parceiro/" + parceiro.getCodigo());
         return mv;
     }
+    @GetMapping("parceiro")
+    public ModelAndView Parceiro(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("html/sejaparceiro");
+        mv.addObject("parceiro", new Parceiro());
+        return mv;
+    }
 
 }
 

@@ -10,8 +10,9 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/album/">
 
   <!-- Bootstrap core CSS -->
-  <link href="../bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/materialize/bootstrap-5.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
   <header class="p-3 mb-3 border-bottom">
     <div class="container">
@@ -29,7 +30,8 @@
         </ul>
 
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Login
           </button>
           <ul class="dropdown-menu">
@@ -38,27 +40,38 @@
           </ul>
         </div>
 
-    </div>
+      </div>
   </header>
 
-  <div class="container align-self-center d-flex justify-content-center">
-  <div class="row justify-content-center align-items-center vw-100"> 
-    <div class="col-md-4 col-xs-4">
-  <label for="exampleFormControlInput1" class="form-label">Endereço</label>
-  <input type="text" class="form-control" id="endereco" placeholder="Digite o endereço">
-</div>
-<div class="col-md-auto col-xs-4">
-  <label for="exampleFormControlInput1" class="form-label">Data Check In</label>
-  <input type="date" class="form-control" id="dataCheckIn" placeholder="Digite o endereço">
-</div>
-<div class="col-md-auto col-xs-4">
-  <label for="exampleFormControlInput1" class="form-label">Data Check Out</label>
-  <input type="date" class="form-control" id="dataCheckOut" placeholder="Digite o endereço">
-</div>
-<div class="col-md-auto align-self-end"> 
-<button class="btn btn-primary" type="submit">Pesquisar</button> 
-</div>
-</div>
-</div>
+  <div class="container">
+    <div class="row">
+    <form method="post" th:action="pesquisar-servico" th:object="${servicos}" class="needs-validation" novalidate>
+      <div class="col">
+        <label for="endereco" class="form-label">Endereço</label>
+        <input type="text" class="form-control" id="endereco" placeholder="Digite o endereço">
+      </div>
+      <div class="col h6"><br><br>
+        <input type="checkbox" th:field="*{seg}">
+        <label class="form-label">Seg</label>
+        <input type="checkbox" th:field="*{ter}">
+        <label class="form-label">Ter</label>
+        <input type="checkbox" th:field="*{qua}">
+        <label class="form-label">Qua</label>
+        <input type="checkbox" th:field="*{qui}">
+        <label class="form-label">Qui</label>
+        <input type="checkbox" th:field="*{sex}">
+        <label class="form-label">Sex</label>
+        <input type="checkbox" th:field="*{sab}">
+        <label class="form-label">Sab</label>
+        <input type="checkbox" th:field="*{dom}">
+        <label class="form-label">Dom</label>
+      </div>
+      <div class="col"><br>
+        <button class="btn btn-primary" type="submit">Pesquisar</button>
+      </div>
+    </div>
+    </form>
+  </div>
 </body>
+
 </html>
